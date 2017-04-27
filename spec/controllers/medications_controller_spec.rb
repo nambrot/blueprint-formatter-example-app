@@ -38,7 +38,7 @@ RSpec.describe MedicationsController,
 
   describe '#update',
     action: 'Change a given medication [PATCH]',
-    action_description: "This endpoint allows you to change the name of a medication " do
+    action_description: "This endpoint allows you to change the name of a medication" do
 
     let!(:medication) { patient.medications.create name: 'existing-name' }
     let(:param_medication_id) { medication.id }
@@ -166,5 +166,4 @@ RSpec.describe MedicationsController,
       end
     end
   end
-
 end
