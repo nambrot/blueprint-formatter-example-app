@@ -19,7 +19,7 @@ RSpec.describe MedicationsController,
     let!(:medication) { patient.medications.create name: 'existing-name' }
     let(:retrieve_medications) { get :index, patient_id: param_patient_id, format: :json }
 
-    it 'retrievs the patients medications' do
+    it "retrieves the patient's medications" do
       retrieve_medications
       expect(JSON.parse(response.body).length).to eql 1
       expect(response).to have_http_status(:ok)
