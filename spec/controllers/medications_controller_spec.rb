@@ -19,7 +19,7 @@ RSpec.describe MedicationsController,
     let!(:medication) { patient.medications.create name: 'existing-name' }
     let(:retrieve_medications) { get :index, patient_id: param_patient_id, format: :json }
 
-    it 'retrievs the patients medications' do
+    it "retrieves the patient's medications" do
       retrieve_medications
       expect(JSON.parse(response.body).length).to eql 1
       expect(response).to have_http_status(:ok)
@@ -38,7 +38,7 @@ RSpec.describe MedicationsController,
 
   describe '#update',
     action: 'Change a given medication [PATCH]',
-    action_description: "This endpoint allows you to change the name of a medication " do
+    action_description: "This endpoint allows you to change the name of a medication" do
 
     let!(:medication) { patient.medications.create name: 'existing-name' }
     let(:param_medication_id) { medication.id }
@@ -166,5 +166,4 @@ RSpec.describe MedicationsController,
       end
     end
   end
-
 end
